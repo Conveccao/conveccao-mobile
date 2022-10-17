@@ -1,11 +1,6 @@
 import React from "react";
 
-import navigation from '../../routes/stack'
-
 import { useNavigation } from "@react-navigation/native"
-
-// import { propsStack } from "../../routes/Stack/Models";
-
 
 import {
     Container,
@@ -14,17 +9,21 @@ import {
     TextButtonStart
 } from './styles';
 
+import { propsStack } from "../../routes/Models";
+
 export default function Welcome() {
-    // const navigation = useNavigation<propsStack>()
+    const navigation = useNavigation <propsStack> ()
     return (
         <Container>
             <TitlePage>
                 Obtenha os dados na sua mão
             </TitlePage>
             <ButtonStart>
-                <TextButtonStart
-                    // onPress={() => navigation.navigate('Main')} 
-                >
+                <TextButtonStart onPress={() => navigation.navigate('Main', {
+                    screen: 'Estações',
+                    
+                }
+                )} >
                     COMEÇAR
                 </TextButtonStart>
             </ButtonStart>
