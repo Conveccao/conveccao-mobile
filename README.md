@@ -21,7 +21,10 @@ $ cd conveccao-mobile
 $ npm install
 
 # Iniciar o projeto
-$ npm start
+$ npx react-native start
+
+# Iniciar o projeto no emulador
+$ npx react-native run-android
 
 
 ```
