@@ -1,43 +1,41 @@
 import styled from 'styled-components/native';
 
+
 export const Container = styled.View`
-    display: flex;
+    flex: 1;
+`;
+
+export const ImageBG = styled.ImageBackground`
     width: 100%;
     height: 100%;
-    justify-content: flex-end;
+`;
+
+export const Content = styled.View`
+    flex: 1;
+    justify-content: space-between;
     align-items: center;
-    background: #000;
-    padding-bottom: 20%;
+    padding: 30px;
 `;
 
 export const TitlePage = styled.Text`
-    font-family: 'Lexend-SemiBold';
-    font-size: 70px;
-    color: #FFFFFF;
-    max-width: 80%;
+    font-size: 80px;
+    font-weight: 400;
+    color: #f8f8ff;
 `;
 
-export const ButtonStart = styled.TouchableOpacity`
-    display: flex;
+export const ButtonAccess = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 46px;
-    background: #00C667;
-    border-radius: 8px;
-    margin-top: 4%;
+
+    width: 100%;
+    height: 48px;
+
+    background-color: #00C667;
+    border-radius: 4px;
 `;
 
-export const TextButtonStart = styled.Text`
-    font-family: 'Lexend-SemiBold';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 32px;
-    color: #FFFFFF;
+export const ButtonAccessText = styled.Text`
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8ff;
 `;
-
-
-
-
-

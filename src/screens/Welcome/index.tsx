@@ -1,32 +1,34 @@
-import React from "react";
-
-import { useNavigation } from "@react-navigation/native"
-
 import {
     Container,
     TitlePage,
-    ButtonStart,
-    TextButtonStart
+    ButtonAccess,
+    ButtonAccessText,
+    ImageBG,
+    Content
 } from './styles';
 
-import { propsStack } from "../../routes/Models";
+const bgImage = require("../../assets/images/bginicio.png");
+
+import { useNavigation } from '@react-navigation/native';
 
 export default function Welcome() {
-    const navigation = useNavigation <propsStack> ()
+    const navigation = useNavigation();
+
+    function openScreen() {
+        navigation.navigate('Home');
+    }
+ 
     return (
         <Container>
-            <TitlePage>
-                Obtenha os dados na sua mão
-            </TitlePage>
-            <ButtonStart>
-                <TextButtonStart onPress={() => navigation.navigate('Main', {
-                    screen: 'Estações',
-                    
-                }
-                )} >
-                    COMEÇAR
-                </TextButtonStart>
-            </ButtonStart>
+            <ImageBG source={bgImage}>
+                <Content>
+                    <TitlePage>Obtenha os dados na sua mão</TitlePage>
+                    <ButtonAccess onPress={openScreen}>
+                        <ButtonAccessText>Acessar</ButtonAccessText>
+                    </ButtonAccess>
+                </Content>
+            </ImageBG>
         </Container>
     );
-}   
+}
+  
