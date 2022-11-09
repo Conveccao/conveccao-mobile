@@ -7,7 +7,7 @@ import Details from '../screens/Details';
 
 import { RootStackParamList } from './types';
 import TabRoutes from './tab.routes';
-import AlertDetails from '../screens/AlertsDetails';
+import AlertsDetails from '../screens/AlertsDetails';
 
 const { Screen, Navigator } = createNativeStackNavigator<RootStackParamList>()
 
@@ -55,7 +55,7 @@ export default function StackRoutes() {
         />
         <Screen
           name="AlertsDetails"
-          component={AlertDetails}
+          component={AlertsDetails}
           options={{
             title: 'Detalhes do alerta',
             headerStyle: {

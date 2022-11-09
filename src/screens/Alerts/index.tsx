@@ -11,28 +11,7 @@ export default function Alerts() {
   return (
     <ScrollView>
       <Container>
-
         <CardAlert typeAlert='Deslizamento de terra' onPress={() => navigation.navigate('AlertsDetails')}/>
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
-
-        <CardAlert typeAlert='Deslizamento de terra' />
       </Container>
     </ScrollView>
   );
