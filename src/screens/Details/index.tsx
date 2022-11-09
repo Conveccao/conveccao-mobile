@@ -28,8 +28,6 @@ export default function Details() {
     const routes = useRoute();
     const {name, reference, link} = routes.params as StationProps;
 
-
-
     return (
         <>
             <ScrollView>
@@ -52,7 +50,7 @@ export default function Details() {
                     <ContentDataTitle>
                         <ContentDataTitleText>Dados coletados da estação</ContentDataTitleText>
                     </ContentDataTitle>
-                    <StationChart />
+                    <StationChart title='Pluviometro'/>
                 </StationContentData>
             </ScrollView>
         </>

@@ -10,6 +10,8 @@ export declare global {
                 link: string;
             };
             Favorites: undefined;
+            Alerts: undefined;
+            AlertsDetails: undefined;
         } 
     }
 }
