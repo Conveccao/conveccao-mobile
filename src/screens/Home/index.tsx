@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ScrollView } from "react-native";
-import { Skeleton, VStack, Center } from 'native-base';
-
 
 import CardStation from "../../components/CardStation";
 import { Container } from "./styles";
@@ -19,50 +17,40 @@ type StationProps = {
 
 export default function Home() {
     const navigation = useNavigation();
-    const [stations, setStations] = useState<StationProps[]>([]);;
-    const [isLoading, setLoading] = useState(false);
+    const [stations, setStations] = useState<StationProps[]>([]);
 
     useEffect(() => {
         async function loadStations() {
-            setLoading(true);
             const response = await api.get(URI.STATIONS);
             setStations(response.data);
-            setLoading(false);
         }
         loadStations();
-    }, [setLoading]);
+    }, [stations]);
 
     return (
         <>
             <ScrollView>
-                {isLoading ? (
-                    <Center w="100%" padding={8}>
-                        {stations.map(station => (
-                            <Skeleton h="130" rounded="md" startColor="#00C667" m="1" />
-                        ))}
-                    </Center>
-                    )
-                    :
-                    (
-                        <Container>
-                            {stations.map((station: any) => (
-                                <CardStation
-                                    key={station.id}
-                                    name={station.name}
-                                    reference={station.reference}
-                                    link={station.link}
-                                    onPress={
-                                        () => navigation.navigate('Details',
-                                            {
-                                                id: station.id,
-                                                name: station.name,
-                                                reference: station.reference,
-                                                link: station.link,
-                                            })}
-                                />
-                            ))}
-                        </Container>
-                    )}
+                <Container>
+                    {stations.map((station: any) => (
+                        <CardStation
+                            key={station.id}
+                            name={station.name}
+                            reference={station.reference}
+                            link={station.link}
+                            onPress={
+                                () => navigation.navigate('Details',
+                                    {
+                                        id: station.id,
+                                        name: station.name,
+                                        reference: station.reference,
+                                        link: station.link,
+                                        installationDate: station.installation_date,
+                                        lat: station.lat,
+                                        lon: station.lon,
+                                    })}
+                        />
+                    ))}
+                </Container>
             </ScrollView>
         </>
     );

@@ -14,7 +14,7 @@ export const Content = styled.View`
     flex: 1;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 15px;
 `;
 
 export const TitlePage = styled.Text`

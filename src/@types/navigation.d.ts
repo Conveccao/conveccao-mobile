@@ -8,8 +8,13 @@ export declare global {
                 name: string;
                 reference: string;
                 link: string;
+                installationDate: string;
+                lat: string;
+                lon: string;
             };
             Favorites: undefined;
+            Alerts: undefined;
+            AlertsDetails: undefined;
         } 
     }
 }

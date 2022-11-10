@@ -22,7 +22,7 @@ export default function Welcome() {
         <Container>
             <ImageBG source={bgImage}>
                 <Content>
-                    <TitlePage>Obtenha os dados na sua mão</TitlePage>
+                    <TitlePage>Obtenha os dados na palma da sua mão</TitlePage>
                     <ButtonAccess onPress={openScreen}>
                         <ButtonAccessText>Acessar</ButtonAccessText>
                     </ButtonAccess>
