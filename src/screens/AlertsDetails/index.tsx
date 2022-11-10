@@ -15,7 +15,7 @@ import {
     HourText,
     HourTextSubtitle,
     DateText,
-    DateTextSubtitle
+    DateTextSubtitle,
 } from "./styles";
 
 export default function AlertsDetails() {

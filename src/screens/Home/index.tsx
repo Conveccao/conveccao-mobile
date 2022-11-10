@@ -44,6 +44,9 @@ export default function Home() {
                                         name: station.name,
                                         reference: station.reference,
                                         link: station.link,
+                                        installationDate: station.installation_date,
+                                        lat: station.lat,
+                                        lon: station.lon,
                                     })}
                         />
                     ))}

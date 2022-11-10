@@ -1,15 +1,15 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-    flex: 1;
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
 `;
 
 export const ContentTypeContainerAll = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ContentTypeContainer = styled.View`
@@ -17,13 +17,15 @@ export const ContentTypeContainer = styled.View`
 `;
 
 export const ContentLocalContainer = styled.View`
- align-items: flex-end;
- width: 45%;
+  align-items: flex-end;
+  width: 45%;
 `;
 
 export const ContentHourContainerAll = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
 `;
 
 export const ContentHourContainer = styled.View`
@@ -36,19 +38,19 @@ export const ContentDateContainer = styled.View`
 `;
 
 export const TypeText = styled.Text`
-    font-size: 16px;
-    font-weight: bold;
-    color: #29292e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #29292e;
 `;
 
 export const TypeTextSubtitle = styled.Text`
-    font-size: 14px;
+  font-size: 14px;
 `;
 
 export const LocalText = styled.Text`
-    font-size: 16px;
-    font-weight: bold;
-    color: #29292e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #29292e;
 `;
 
 export const LocalTextSubtitle = styled.Text`
@@ -56,9 +58,9 @@ export const LocalTextSubtitle = styled.Text`
 `;
 
 export const HourText = styled.Text`
-    font-size: 16px;
-    font-weight: bold;
-    color: #29292e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #29292e;
 `;
 
 export const HourTextSubtitle = styled.Text`
@@ -66,9 +68,9 @@ export const HourTextSubtitle = styled.Text`
 `;
 
 export const DateText = styled.Text`
-    font-size: 16px;
-    font-weight: bold;
-    color: #29292e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #29292e;
 `;
 
 export const DateTextSubtitle = styled.Text`
