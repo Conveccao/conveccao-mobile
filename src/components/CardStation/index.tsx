@@ -9,12 +9,7 @@ import {
   StationName,
   StationLocalTitle,
   StationLocal,
-  ButtonFavorite,
 } from "./styles";
-
-import { Star } from 'phosphor-react-native';
-
-const stationImg = require("../../assets/images/fatec-sjc.jpg")
 
 type StationProps = {
   name: string;
@@ -24,12 +19,6 @@ type StationProps = {
 };
 
 export default function CardStation( {name, reference, link, onPress}: StationProps ) {
-  const [isFavoriteIcon, setIsFavoriteIcon] = useState(true);
-
-  const handleChangeIconFav = () => {
-    setIsFavoriteIcon(!isFavoriteIcon);
-  }
-
   return ( 
     <>
       <Card onPress={onPress}>
@@ -44,9 +33,6 @@ export default function CardStation( {name, reference, link, onPress}: StationPr
             <StationLocal>{reference}</StationLocal>
           </StationContent>
         </StationInformationContainer>
-        {/* <ButtonFavorite onPress={handleChangeIconFav}>
-          <Star size={24} color="#f8f8ff" weight={isFavoriteIcon ? "regular" : "fill"} />
-        </ButtonFavorite> */}
       </Card>
     </>
   );
