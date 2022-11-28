@@ -40,12 +40,12 @@ export default function StackRoutes() {
           options={{
             title: 'Detalhes da estação',
             headerStyle: {
-              backgroundColor: '#f8f8ff'
+              backgroundColor: '#0A94ED',
             },
-            headerTintColor: '#29292e',
-            headerTitleStyle: {
-              fontWeight: 'normal'
-            }
+          headerTintColor: '#f8f8ff',
+          headerTitleStyle: {
+              fontWeight: 'normal',
+          },
           }}
         />
         <Screen
@@ -59,9 +59,9 @@ export default function StackRoutes() {
           options={{
             title: 'Detalhes do alerta',
             headerStyle: {
-              backgroundColor: '#f8f8ff'
+              backgroundColor: '#0A94ED',
             },
-            headerTintColor: '#29292e',
+            headerTintColor: '#f8f8ff',
             headerTitleStyle: {
               fontWeight: 'normal'
             }

@@ -59,5 +59,3 @@ export const StationLocal = styled.Text`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
-export const ButtonFavorite = styled.TouchableOpacity``;

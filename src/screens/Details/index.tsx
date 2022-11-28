@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { useRoute } from "@react-navigation/native";
 
@@ -30,8 +31,11 @@ import {
 } from './styles';
 
 import StationChart from '../../components/StationChart';
+import api from '../../services/api';
+import { URI } from '../../services/uri';
 
 type StationProps = {
+    id: number;
     name: string;
     reference: string;
     link: string;
@@ -42,7 +46,25 @@ type StationProps = {
 
 export default function Details() {
     const routes = useRoute();
-    const { name, reference, link, installationDate, lat, lon } = routes.params as StationProps;
+    const { id, name, reference, link, installationDate, lat, lon } = routes.params as StationProps;
+
+    const [stationMeasures, setStationMeasures] = useState<any[]>([]);
+
+    useEffect(() => { 
+        async function getMeasures() {
+            api
+            .get(URI.MEASURES)
+            .then((response) => {
+                const measures = response.data;
+                const measuresFiltered = measures.filter((measure: any) => measure.stationId === id);
+                setStationMeasures(measuresFiltered);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
+        getMeasures();
+    }, []);
 
     return (
         <>
@@ -68,7 +90,7 @@ export default function Details() {
                             <DateTextSubtitle>{installationDate}</DateTextSubtitle>
                         </ContentDateContainer>
                     </ContentDateContainerAll>
-                    
+
                     <ContentLatLongContainerAll>
                         <ContentLatContainer>
                             <LatText>Latitude</LatText>
@@ -86,7 +108,7 @@ export default function Details() {
                     <ContentDataTitle>
                         <ContentDataTitleText>Dados coletados da estação</ContentDataTitleText>
                     </ContentDataTitle>
-                    <StationChart title='Pluviometro' />
+                    <StationChart title="Temperatura" />
                 </StationContentData>
             </ScrollView>
         </>

@@ -14,7 +14,12 @@ export declare global {
             };
             Favorites: undefined;
             Alerts: undefined;
-            AlertsDetails: undefined;
+            AlertsDetails: {
+                id: string,
+                occurrence: string,
+                place: string,
+                date: string,
+                hour: string,};
         } 
     }
 }

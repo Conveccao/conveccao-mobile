@@ -14,34 +14,54 @@ const { Screen, Navigator } = createBottomTabNavigator<RootTabParamList>();
 export default function TabRoutes() {
     return (
         <>
-            <StatusBar barStyle={'dark-content'} backgroundColor={"transparent"} translucent />
+            <StatusBar barStyle={'default'}   backgroundColor={"#0a8be0"} />
             <Navigator
                 screenOptions={{
                     headerTitleAlign: 'center',
-                    tabBarShowLabel: false,
-                    headerTintColor: '#29292e',
-                    headerTitleStyle: { fontWeight: 'normal' },
-                    tabBarActiveTintColor: '#00C667',
-                    tabBarInactiveTintColor: '#c1c1c1',
                     headerStyle: {
-                        backgroundColor: '#f8f8ff',
-                        borderBottomWidth: 1,
-                        height: 80,
+                        backgroundColor: '#0A94ED',
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        borderBottomEndRadius: 15,
+                        borderBottomStartRadius: 15,
                     },
-
+                    headerTintColor: '#f8f8ff',
+                    headerTitleStyle: {
+                        fontWeight: 'normal',
+                    },
+                    tabBarActiveTintColor: '#f8f8ff',
+                    tabBarInactiveTintColor: '#29292e',
+                    tabBarShowLabel: true,
                     tabBarStyle: {
-                        backgroundColor: '#f8f8ff',
-                        borderTopWidth: 1,
-                        height: 60,
-                        padding: 10,
-                    }
+                        position: 'absolute',
+
+                        bottom: 5,
+                        left: 10,
+                        right: 10,
+
+                        elevation: 0,
+
+                        backgroundColor: '#0A94ED',
+                        borderRadius: 15,
+                        height: 90,
+                        borderBottomWidth: 20,
+                        borderTopWidth: 20,
+                        borderTopColor: '#0A94ED',
+                        borderColor: '#0A94ED',
+                    },
                 }}
             >
                 <Screen name="HomeTab" component={Home} options={{
-                    title: 'Estações cadastradas',
-                    tabBarIcon: ({ size, color }) => {
+                    title: 'Estações',
+                    tabBarIcon: ({ color, size, focused }) => {
+                        if (focused) {
                         return (
-                            <House size={size} color={color} weight="fill" />
+                            <House color={color} size={size} weight="fill" />
+                        );
+                        }
+
+                        return (
+                            <House color={color} size={size}/>
                         );
                     },
                 }}
@@ -49,9 +69,15 @@ export default function TabRoutes() {
 
                 <Screen name="AlertTab" component={Alerts} options={{
                     title: 'Alertas',
-                    tabBarIcon: ({ size, color }) => {
+                    tabBarIcon: ({ color, size, focused }) => {
+                        if (focused) {
                         return (
-                            <Bell size={size} color={color} weight="fill" />
+                            <Bell color={color} size={size} weight="fill" />
+                        );
+                        }
+
+                        return (
+                            <Bell color={color} size={size}/>
                         );
                     },
                 }}

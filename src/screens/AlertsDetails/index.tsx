@@ -1,4 +1,5 @@
 import { View } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 import {
     Container,
@@ -18,18 +19,29 @@ import {
     DateTextSubtitle,
 } from "./styles";
 
+type alertProps = {
+    id: number;
+    occurrence: string;
+    place: string;
+    date: string;
+    hour: string;
+};
+
 export default function AlertsDetails() {
+    const routes = useRoute();
+    const { occurrence, place, date, hour } = routes.params as alertProps;
+
     return (
         <Container>
             <ContentTypeContainerAll>
                 <ContentTypeContainer>
                     <TypeText>Tipo:</TypeText>
-                    <TypeTextSubtitle>Deslizamento de terra</TypeTextSubtitle>
+                    <TypeTextSubtitle>{occurrence}</TypeTextSubtitle>
                 </ContentTypeContainer>
                 <ContentLocalContainer>
                     <View>
-                        <LocalText>Localização</LocalText>
-                        <LocalTextSubtitle>PQ. Tecnológico</LocalTextSubtitle>
+                        <LocalText>Localização:</LocalText>
+                        <LocalTextSubtitle>{place}</LocalTextSubtitle>
                     </View>
                 </ContentLocalContainer>
             </ContentTypeContainerAll>
@@ -37,12 +49,12 @@ export default function AlertsDetails() {
             <ContentHourContainerAll>
                 <ContentHourContainer>
                     <HourText>Hora:</HourText>
-                    <HourTextSubtitle>13:28:43</HourTextSubtitle>
+                    <HourTextSubtitle>{hour}</HourTextSubtitle>
                 </ContentHourContainer>
                 <ContentDateContainer>
                     <View>
                         <DateText>Data:</DateText>
-                        <DateTextSubtitle>07/11/2022</DateTextSubtitle>
+                        <DateTextSubtitle>{date}</DateTextSubtitle>
                     </View>
                 </ContentDateContainer>
             </ContentHourContainerAll>

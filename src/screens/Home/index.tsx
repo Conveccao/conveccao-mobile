@@ -20,12 +20,16 @@ export default function Home() {
     const [stations, setStations] = useState<StationProps[]>([]);
 
     useEffect(() => {
-        async function loadStations() {
-            const response = await api.get(URI.STATIONS);
+        api
+        .get(URI.STATIONS)
+        .then(response => {
             setStations(response.data);
-        }
-        loadStations();
-    }, [stations]);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }, []);
+
 
     return (
         <>
