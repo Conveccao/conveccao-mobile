@@ -18,10 +18,10 @@ $ git clone https://github.com/Conveccao/conveccao-mobile.git
 $ cd conveccao-mobile
 
 # Instale as dependências
-$ npm install
+$ yarn install
 
 # Iniciar o projeto
-$ npx react-native start
+$ yarn start
 
 # Iniciar o projeto no emulador
 $ npx react-native run-android
